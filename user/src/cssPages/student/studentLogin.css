@@ -1,0 +1,298 @@
+/* === Container === */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #1a1a1a;
+  font-family: "Poppins", sans-serif;
+  padding: 20px;
+}
+
+.login-box {
+  background: #2d3748;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  padding: 40px 30px;
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid #4a5568;
+}
+
+/* === Header === */
+.header {
+  text-align: center;
+  margin-bottom: 30px; /* Space below header */
+}
+
+.text {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #e2e8f0;
+}
+
+.underline {
+  width: 60px;
+  height: 3px;
+  background-color: #63b3ed;
+  border-radius: 3px;
+  margin: 8px auto;
+}
+
+/* === Inputs === */
+.inputs {
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto 25px; /* Increased bottom margin */
+  display: flex;
+  flex-direction: column;
+  gap: 18px; /* Increased gap between input fields */
+}
+
+.input {
+  display: flex;
+  align-items: center;
+  background: #4a5568;
+  border: 1px solid #718096;
+  border-radius: 8px;
+  padding: 12px 15px; /* Slightly increased padding */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: border 0.3s ease;
+}
+
+.input:hover {
+  border-color: #63b3ed;
+}
+
+.icon {
+  color: #63b3ed;
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.input input {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 14px;
+  background: transparent;
+  color: #e2e8f0;
+}
+
+.input input::placeholder {
+  color: #a0aec0;
+}
+
+/* === Gender Selection === */
+.gender-selection {
+  margin: 15px 0 25px 0; /* Added bottom margin */
+  max-width: 350px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gender-selection label {
+  display: block;
+  margin-bottom: 10px; /* Space above buttons */
+  font-weight: 500;
+  color: #e2e8f0;
+  font-size: 14px;
+}
+
+.gender-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.gender-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 12px;
+  border: 1px solid #718096;
+  border-radius: 8px;
+  background: #4a5568;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 13px;
+  color: #e2e8f0;
+}
+
+.gender-btn:hover {
+  border-color: #63b3ed;
+}
+
+.gender-btn.active {
+  border-color: #63b3ed;
+  background-color: #63b3ed;
+  color: #1a202c;
+}
+
+.gender-btn .icon {
+  font-size: 16px;
+  color: inherit;
+}
+
+/* === Forgot Password === */
+.forgot-password {
+  font-size: 14px;
+  color: #a0aec0;
+  margin: 15px 0 25px 0; /* Added top and bottom margin */
+  text-align: center;
+}
+
+.forgot-password span {
+  color: #63b3ed;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.forgot-password span:hover {
+  color: #90cdf4;
+}
+
+/* === Main Submit Button === */
+.submit-main-container {
+  display: flex;
+  justify-content: center;
+  margin: 25px 0 20px 0;
+}
+
+.submit-main-button {
+  background-color: #63b3ed;
+  color: #1a202c;
+  border: none;
+  padding: 14px 40px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 200px;
+}
+
+.submit-main-button:hover:not(:disabled) {
+  background-color: #4299e1;
+  transform: translateY(-2px);
+}
+
+.submit-main-button:disabled {
+  background-color: #4a5568;
+  color: #a0aec0;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* === Switch Mode === */
+.switch-mode {
+  text-align: center;
+  margin-top: 20px;
+  color: #a0aec0;
+  font-size: 14px;
+}
+
+.switch-mode span {
+  color: #63b3ed;
+  cursor: pointer;
+  margin-left: 5px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.switch-mode span:hover {
+  color: #90cdf4;
+  text-decoration: underline;
+}
+
+/* === Responsive Design === */
+@media (max-width: 500px) {
+  .text {
+    font-size: 1.2rem;
+  }
+
+  .input {
+    padding: 10px 12px;
+  }
+
+  .submit-container {
+    flex-direction: column;
+  }
+  
+  .submit-button {
+    width: 100%;
+  }
+}
+
+/* === Select Dropdown Styles === */
+.input select {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 14px;
+  background: transparent;
+  color: #e2e8f0;
+  cursor: pointer;
+  appearance: none; /* Remove default arrow */
+  -webkit-appearance: none; /* For Safari */
+  -moz-appearance: none; /* For Firefox */
+  padding: 2px 0;
+}
+
+/* Custom dropdown arrow */
+.input select {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2363b3ed'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 16px;
+  padding-right: 30px; /* Space for arrow */
+}
+
+/* Select focus state */
+.input select:focus {
+  color: #e2e8f0;
+}
+
+/* Select options styling */
+.input select option {
+  background: #4a5568;
+  color: #e2e8f0;
+  padding: 12px;
+  border: none;
+}
+
+/* Select hover state */
+.input:hover select {
+  color: #e2e8f0;
+}
+
+/* Disabled default option styling */
+.input select option[value=""] {
+  color: #a0aec0;
+  font-style: italic;
+}
+
+/* Select active state */
+.input select:active,
+.input select:focus {
+  background-color: transparent;
+}
+
+/* === Responsive Design === */
+@media (max-width: 500px) {
+  .text {
+    font-size: 1.2rem;
+  }
+
+  .input {
+    padding: 10px 12px;
+  }
+
+  .submit-main-button {
+    padding: 12px 30px;
+    min-width: 180px;
+  }
+}
