@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
-import '../../cssPages/student/studentLogin.css'
+import './userLogin.css'
 import { FaUserAstronaut } from "react-icons/fa";
 import { FaRegUserCircle } from "react-icons/fa";
 import { AiTwotoneMail } from "react-icons/ai";
 import { RiLockPasswordLine } from "react-icons/ri";
 import { FaMale, FaFemale, FaCalendar, FaGraduationCap, FaPhone } from 'react-icons/fa';
 
-const StudentLogin = () => {
+const UserLogin = () => {
     const [action, setAction] = useState("Login");
     const [formData, setFormData] = useState({
         // Student table fields
@@ -109,13 +109,19 @@ const StudentLogin = () => {
             const data = await response.json();
 
             if (response.ok) {
-                localStorage.setItem('token', data.token);
-                localStorage.setItem('user', JSON.stringify(data.user));
-                alert('Login successful!');
-                window.location.href = '/dashboard';
+            const { token, user } = data;
+
+            localStorage.setItem('token', token);
+            localStorage.setItem('user', JSON.stringify(user));
+
+            alert('Login successful!');
+
+            if (user?.role === 'Admin') {
+                window.location.href = '/admin-dashboard';
             } else {
-                alert(data.message || 'Invalid credentials!');
+                window.location.href = '/student-dashboard';
             }
+}
         } catch (error) {
             console.error('Login error:', error);
             alert('Login failed! Please check your connection.');
@@ -397,4 +403,4 @@ const StudentLogin = () => {
 )
 }
 
-export default StudentLogin;
+export default UserLogin;
